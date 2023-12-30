@@ -524,7 +524,7 @@ body.menu {
     100% {
         max-width: 50ex;
         max-height: 15em;
-        margin-top: .$em;
+        /*margin-top: .$em;  CSS Bug?*/
         padding: .45em .5em;
         overflow: hidden;
     }

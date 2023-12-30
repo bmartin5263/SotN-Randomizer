@@ -18,7 +18,7 @@
     constants = require('./constants')
     errors = require('./errors')
     extension = require('./extension')
-    presets = require('../build/presets')
+    presets = require('../presets')
     relics = require('./relics')
     util = require('./util')
   }

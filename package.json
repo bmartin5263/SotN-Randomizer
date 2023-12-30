@@ -14,7 +14,10 @@
   },
   "scripts": {
     "build-presets": "node tools/build-presets",
-    "postinstall": "npm run build-presets"
+    "postinstall": "npm run build-presets",
+    "build": "tsc --build && node tools/build-presets",
+    "clean": "tsc --build --clean",
+    "start": "node build/randomize -i sotn.bin -o custom.bin -f presets/safe"
   },
   "presets": [
     "casual",
@@ -43,5 +46,8 @@
   "bugs": {
     "url": "https://github.com/3snowp7im/SotN-Randomizer/issues"
   },
-  "homepage": "https://sotn.io"
+  "homepage": "https://sotn.io",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }
