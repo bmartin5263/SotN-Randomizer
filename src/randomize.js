@@ -5,16 +5,16 @@ const fs = require('fs')
 const path = require('path')
 const os = require('os')
 const Worker = require('worker_threads').Worker
-const constants = require('./src/constants')
-const errors = require('./src/errors')
-const presets = require('./build/presets')
-const randomizeStats = require('./src/randomize_stats')
-const randomizeRelics = require('./src/randomize_relics')
-const randomizeMusic = require('./src/randomize_music')
-const applyAccessibilityPatches = require('./src/accessibility_patches')
-const util = require('./src/util')
-const help = require('./src/help')
-let version = require('./package').version
+const constants = require('./constants')
+const errors = require('./errors')
+const presets = require('../build/presets')
+const randomizeStats = require('./randomize_stats')
+const randomizeRelics = require('./randomize_relics')
+const randomizeMusic = require('./randomize_music')
+const applyAccessibilityPatches = require('./accessibility_patches')
+const util = require('./util')
+const help = require('./help')
+let version = require('../package.json').version
 
 let eccEdcCalc
 const yargs = require('yargs')
@@ -362,7 +362,7 @@ let fd
 let size
 // Read bin file if provided.
 if ('inBin' in argv) {
-  eccEdcCalc = require('./src/ecc-edc-recalc-js')
+  eccEdcCalc = require('./ecc-edc-recalc-js')
   let digest
   if (!('out' in argv)) {
     fd = fs.openSync(argv.inBin, 'r+')
